@@ -1,8 +1,13 @@
 #include "Game.h"
 
+#include "MainScene.h"
+#include "SecondaryScene.h"
+
 Game::Game()
 {
-
+    Lumin::SceneManager::scenes->add("main", std::make_shared<MainScene>());
+    Lumin::SceneManager::scenes->add("secondary", std::make_shared<SecondaryScene>());
+    Lumin::SceneManager::active = Lumin::SceneManager::scenes->get("main");
 }
 
 Game::~Game()
@@ -12,14 +17,10 @@ Game::~Game()
 
 void Game::run()
 {
-    while (!Lumin::WindowManager::window->isOpen())
-    {
-        while (Lumin::WindowManager::window->pollEvent(*Lumin::EventManager::event))
-        {
-            if (Lumin::EventManager::event->type == sf::Event::Closed)
-                Lumin::WindowManager::window->close();
-        }
-        Lumin::WindowManager::window->clear();
-        Lumin::WindowManager::window->display();
+    while(Lumin::WindowManager::window->isOpen())
+    {   
+        Lumin::SceneManager::active->processEvent();
+        Lumin::SceneManager::active->update();    
+        Lumin::SceneManager::active->render();
     }
 }
