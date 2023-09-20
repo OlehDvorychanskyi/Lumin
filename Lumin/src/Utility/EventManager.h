@@ -9,5 +9,6 @@ namespace Lumin
     public:
         static std::unique_ptr<sf::Event> event;
         static void init();
+        static void shutdown();
     };
 }

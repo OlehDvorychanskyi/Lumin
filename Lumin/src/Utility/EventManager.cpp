@@ -8,4 +8,9 @@ namespace Lumin
     {
         event = std::make_unique<sf::Event>();
     }
+
+    void EventManager::shutdown()
+    {
+        event.reset();
+    }
 }

@@ -10,6 +10,8 @@ namespace Lumin
         if (isInitialize == false)
         {
             WindowManager::init({800, 600}, "Lumin");
+            EventManager::init();
+            SceneManager::init();
             isInitialize = true;
             LUMIN_CORE_LOG("Engine initialized successfully");
         }
@@ -28,6 +30,7 @@ namespace Lumin
         else
         {
             WindowManager::shutdown();
+            EventManager::shutdown();
             isInitialize = false;
             LUMIN_CORE_LOG("Engine shutdown successfully");
         }
