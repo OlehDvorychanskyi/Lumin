@@ -6,3 +6,5 @@
 #include "Graphics/WindowManager.h"
 
 #include "Utility/EventManager.h"
+
+#include "Logging/Logger.h"
