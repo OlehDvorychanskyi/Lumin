@@ -1,5 +1,9 @@
 #include "Initializer.h"
-#include <Lumin.h>
+
+#include <Graphics/WindowManager.h>
+#include <Utility/EventManager.h>
+#include <Utility/SceneManager.h>
+#include <Logging/Logger.h>
 
 namespace Lumin
 {

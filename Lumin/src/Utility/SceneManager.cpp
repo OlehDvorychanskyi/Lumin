@@ -1,5 +1,5 @@
 #include "SceneManager.h"
-#include <Lumin.h>
+#include <Logging/Logger.h>
 
 namespace Lumin
 {
