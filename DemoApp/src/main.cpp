@@ -1,9 +1,20 @@
-#include "Game.h"
+#include <Lumin.h>
 
-int main()
+class Game : public Lumin::Application
 {
-    Game demo;
-    demo.run();
+public:
+    Game()
+    {
 
-    return 0;
+    }
+
+    ~Game()
+    {
+
+    }
+};
+
+Lumin::Application* Lumin::createApplication()
+{
+    return new Game();
 }
