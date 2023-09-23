@@ -10,5 +10,3 @@
 #include "Utility/SceneManager.h"
 
 #include "Logging/Logger.h"
-
-#include "Core/EntryPoint.h"
