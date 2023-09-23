@@ -3,6 +3,7 @@
 #include <Core/Initializer.h>
 #include <Graphics/WindowManager.h>
 #include <Utility/EventManager.h>
+#include <Utility/SceneManager.h>
 
 namespace Lumin
 {
@@ -15,16 +16,9 @@ namespace Lumin
     {
         while(WindowManager::window->isOpen())
         {
-            while (WindowManager::window->pollEvent(*EventManager::event))
-            {
-                if (EventManager::event->type == sf::Event::Closed)
-                {
-                    WindowManager::window->close();
-                }
-            }
-            
-            WindowManager::window->clear();
-            WindowManager::window->display();
+            SceneManager::active->processEvent();
+            SceneManager::active->update();
+            SceneManager::active->render();
         }
     }
     
