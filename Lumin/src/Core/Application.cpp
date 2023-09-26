@@ -3,7 +3,7 @@
 #include <Core/Initializer.h>
 #include <Graphics/WindowManager.h>
 #include <Utility/EventManager.h>
-#include <Utility/SceneManager.h>
+#include <Scene/SceneManager.h>
 
 namespace Lumin
 {

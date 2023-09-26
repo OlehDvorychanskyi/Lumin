@@ -6,7 +6,8 @@
 #include "Graphics/WindowManager.h"
 
 #include "Utility/EventManager.h"
-#include "Utility/Scene.h"
-#include "Utility/SceneManager.h"
+
+#include "Scene/Scene.h"
+#include "Scene/SceneManager.h"
 
 #include "Logging/Logger.h"

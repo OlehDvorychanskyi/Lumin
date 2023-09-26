@@ -2,7 +2,7 @@
 
 #include <Graphics/WindowManager.h>
 #include <Utility/EventManager.h>
-#include <Utility/SceneManager.h>
+#include <Scene/SceneManager.h>
 #include <Logging/Logger.h>
 
 namespace Lumin

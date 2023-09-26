@@ -12,6 +12,7 @@ file(GLOB LUMIN_SOURCES
     src/Utility/*.cpp
     src/Logging/*.cpp
     src/Core/*.cpp
+    src/Scene/*.cpp
 )
 
 add_library(${PROJECT_NAME}
