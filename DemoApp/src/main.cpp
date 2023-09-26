@@ -11,7 +11,7 @@ public:
     {
         Lumin::SceneManager::scenes->add("main", std::make_shared<MainScene>());
         Lumin::SceneManager::scenes->add("secondary", std::make_shared<SecondaryScene>());
-        Lumin::SceneManager::active = Lumin::SceneManager::scenes->get("main");
+        Lumin::SceneManager::setActive("main");
     }
 };
 
