@@ -6,8 +6,9 @@ namespace Lumin
     {
     private:
         static bool isInitialize;
-    public:
         static void init();
         static void shutdown();
+
+        friend class Application;
     };
 }
