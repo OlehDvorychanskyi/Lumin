@@ -8,8 +8,8 @@ MainScene::MainScene()
 
 void MainScene::processEvent(const sf::Event &event)
 {
-    if (event.type == sf::Event::Closed)
-        Lumin::WindowManager::window->close();
+    // if (event.type == sf::Event::Closed)
+    //     Lumin::WindowManager::window->close();
 
     if (event.type == sf::Event::KeyPressed)
     {
@@ -25,9 +25,9 @@ void MainScene::update()
 
 }
 
-void MainScene::render()
+void MainScene::render(sf::RenderWindow &window)
 {
-    Lumin::WindowManager::window->clear(sf::Color::Green);
-    Lumin::WindowManager::window->draw(rectangle);
-    Lumin::WindowManager::window->display();
+    window.clear(sf::Color::Green);
+    window.draw(rectangle);
+    window.display();
 }

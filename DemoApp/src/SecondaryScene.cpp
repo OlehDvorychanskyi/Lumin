@@ -8,8 +8,8 @@ SecondaryScene::SecondaryScene()
 
 void SecondaryScene::processEvent(const sf::Event &event)
 {
-    if (event.type == sf::Event::Closed)
-        Lumin::WindowManager::window->close();
+    // if (event.type == sf::Event::Closed)
+    //     Lumin::WindowManager::window->close();
 
     if (event.type == sf::Event::KeyPressed)
     {
@@ -25,9 +25,9 @@ void SecondaryScene::update()
 
 }
 
-void SecondaryScene::render()
+void SecondaryScene::render(sf::RenderWindow &window)
 {
-    Lumin::WindowManager::window->clear(sf::Color::Red);
-    Lumin::WindowManager::window->draw(rectangle);
-    Lumin::WindowManager::window->display();
+    window.clear(sf::Color::Red);
+    window.draw(rectangle);
+    window.display();
 }

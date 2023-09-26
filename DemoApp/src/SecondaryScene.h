@@ -9,5 +9,5 @@ public:
     SecondaryScene();
     virtual void processEvent(const sf::Event &event) override;
     virtual void update() override;
-    virtual void render() override;
+    virtual void render(sf::RenderWindow &window) override;
 };

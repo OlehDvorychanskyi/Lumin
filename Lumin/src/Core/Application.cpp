@@ -18,10 +18,15 @@ namespace Lumin
         {
             while (WindowManager::window->pollEvent(*EventManager::event))
             {
+                // manage window close event (temp decision)
+                if (EventManager::event->type == sf::Event::Closed)
+                    WindowManager::window->close();
+                // -----------------------------------------
+
                 SceneManager::active->processEvent(*EventManager::event);
             }
             SceneManager::active->update();
-            SceneManager::active->render();
+            SceneManager::active->render(*WindowManager::window);
         }
     }
     
