@@ -6,7 +6,7 @@ int main();
 namespace Lumin
 {
     class Application
-    {
+    { 
     public:
         Application();
         virtual ~Application();
