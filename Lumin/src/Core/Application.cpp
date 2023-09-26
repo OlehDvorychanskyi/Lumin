@@ -14,6 +14,7 @@ namespace Lumin
 
     void Application::run()
     {
+        sf::Clock clock;
         while(WindowManager::window->isOpen())
         {
             while (WindowManager::window->pollEvent(*EventManager::event))
@@ -25,7 +26,8 @@ namespace Lumin
 
                 SceneManager::active->processEvent(*EventManager::event);
             }
-            SceneManager::active->update();
+            sf::Time deltaTime = clock.restart();
+            SceneManager::active->update(deltaTime.asSeconds());
             SceneManager::active->render(*WindowManager::window);
         }
     }

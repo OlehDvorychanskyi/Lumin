@@ -20,7 +20,7 @@ void MainScene::processEvent(const sf::Event &event)
     }
 }
 
-void MainScene::update() 
+void MainScene::update(float deltaTime) 
 {
 
 }
