@@ -5,7 +5,6 @@ namespace Lumin
     class Initializer
     {
     private:
-        static bool isInitialize;
         static void init();
         static void shutdown();
 
