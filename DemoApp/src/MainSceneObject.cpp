@@ -12,7 +12,8 @@ void MainSceneObject::processEvent(const sf::Event &event)
     {
         if (event.key.code == sf::Keyboard::Space)
         {
-            Lumin::SceneManager::active = Lumin::SceneManager::scenes->get("secondary");
+            // Lumin::SceneManager::active = Lumin::SceneManager::scenes->get("secondary");
+            Lumin::SceneManager::setActive("secondary");
         }
     }
 }

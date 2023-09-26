@@ -21,6 +21,7 @@ namespace Lumin
     public:
         static std::shared_ptr<Scene> active;
         static std::unique_ptr<SceneHolder> scenes; 
+        static void setActive(const std::string &id);
         static void init();
     };
 }

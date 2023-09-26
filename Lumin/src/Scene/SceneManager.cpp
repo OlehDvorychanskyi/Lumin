@@ -40,4 +40,9 @@ namespace Lumin
             return std::shared_ptr<Scene>();
         }
     }
+
+    void SceneManager::setActive(const std::string &id)
+    {
+        active = scenes->get(id);
+    }
 }
