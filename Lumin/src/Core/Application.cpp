@@ -16,7 +16,10 @@ namespace Lumin
     {
         while(WindowManager::window->isOpen())
         {
-            SceneManager::active->processEvent();
+            while (WindowManager::window->pollEvent(*EventManager::event))
+            {
+                SceneManager::active->processEvent(*EventManager::event);
+            }
             SceneManager::active->update();
             SceneManager::active->render();
         }

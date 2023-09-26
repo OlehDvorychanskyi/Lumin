@@ -6,19 +6,16 @@ MainScene::MainScene()
     rectangle.setFillColor(sf::Color::Red);
 }
 
-void MainScene::processEvent()
+void MainScene::processEvent(const sf::Event &event)
 {
-    while (Lumin::WindowManager::window->pollEvent(*Lumin::EventManager::event))
-    {
-        if (Lumin::EventManager::event->type == sf::Event::Closed)
-            Lumin::WindowManager::window->close();
+    if (Lumin::EventManager::event->type == sf::Event::Closed)
+        Lumin::WindowManager::window->close();
 
-        if (Lumin::EventManager::event->type == sf::Event::KeyPressed)
+    if (Lumin::EventManager::event->type == sf::Event::KeyPressed)
+    {
+        if (Lumin::EventManager::event->key.code == sf::Keyboard::Space)
         {
-            if (Lumin::EventManager::event->key.code == sf::Keyboard::Space)
-            {
-                Lumin::SceneManager::active = Lumin::SceneManager::scenes->get("secondary");
-            }
+            Lumin::SceneManager::active = Lumin::SceneManager::scenes->get("secondary");
         }
     }
 }
