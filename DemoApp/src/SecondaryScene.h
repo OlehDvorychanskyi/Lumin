@@ -1,13 +1,11 @@
 #pragma once
 #include <Lumin.h>
+#include "SecondarySceneObject.h"
 
 class SecondaryScene : public Lumin::Scene
 {
 private:
-    sf::RectangleShape rectangle;
+    SecondarySceneObject obj;
 public:
     SecondaryScene();
-    virtual void processEvent(const sf::Event &event) override;
-    virtual void update(float deltaTime) override;
-    virtual void render(sf::RenderWindow &window) override;
 };

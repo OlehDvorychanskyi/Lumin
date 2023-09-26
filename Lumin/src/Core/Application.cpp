@@ -26,9 +26,13 @@ namespace Lumin
 
                 SceneManager::active->processEvent(*EventManager::event);
             }
+            
             sf::Time deltaTime = clock.restart();
             SceneManager::active->update(deltaTime.asSeconds());
+
+            WindowManager::window->clear();
             SceneManager::active->render(*WindowManager::window);
+            WindowManager::window->display();
         }
     }
     
