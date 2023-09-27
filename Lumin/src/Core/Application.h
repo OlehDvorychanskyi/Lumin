@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML/Window/Event.hpp>
 
 // For adding main like a friend function to Application class
 int main();
@@ -9,6 +10,7 @@ namespace Lumin
     { 
     private: 
         static Application* m_instance; 
+        sf::Event m_event;
     public:
         Application();
         ~Application();

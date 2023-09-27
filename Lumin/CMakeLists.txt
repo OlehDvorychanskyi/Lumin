@@ -9,7 +9,6 @@ FetchContent_MakeAvailable(${PROJECT_NAME})
 
 file(GLOB LUMIN_SOURCES
     src/Graphics/*.cpp
-    src/Utility/*.cpp
     src/Logging/*.cpp
     src/Core/*.cpp
     src/Scene/*.cpp

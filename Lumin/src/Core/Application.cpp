@@ -2,7 +2,6 @@
 
 #include <Core/Initializer.h>
 #include <Graphics/WindowManager.h>
-#include <Utility/EventManager.h>
 #include <Scene/SceneManager.h>
 #include <Core/Assert.h>
 
@@ -22,14 +21,14 @@ namespace Lumin
         sf::Clock clock;
         while(WindowManager::window->isOpen())
         {
-            while (WindowManager::window->pollEvent(*EventManager::event))
+            while (WindowManager::window->pollEvent(m_event))
             {
                 // manage window close event (temp decision)
-                if (EventManager::event->type == sf::Event::Closed)
+                if (m_event.type == sf::Event::Closed)
                     WindowManager::window->close();
                 // -----------------------------------------
 
-                SceneManager::active->processEvent(*EventManager::event);
+                SceneManager::active->processEvent(m_event);
             }
             
             sf::Time deltaTime = clock.restart();
