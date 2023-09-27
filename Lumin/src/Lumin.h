@@ -2,6 +2,7 @@
 
 #include "Core/Initializer.h"
 #include "Core/Application.h"
+#include "Core/Assert.h"
 
 #include "Graphics/WindowManager.h"
 
