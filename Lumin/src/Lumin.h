@@ -4,8 +4,6 @@
 #include "Core/Application.h"
 #include "Core/Assert.h"
 
-#include "Graphics/WindowManager.h"
-
 #include "Scene/Scene.h"
 #include "Scene/SceneManager.h"
 

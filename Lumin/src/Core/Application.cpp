@@ -1,7 +1,6 @@
 #include "Application.h"
 
 #include <Core/Initializer.h>
-#include <Graphics/WindowManager.h>
 #include <Scene/SceneManager.h>
 #include <Core/Assert.h>
 
@@ -13,19 +12,21 @@ namespace Lumin
     {
         Lumin::Initializer::init();
 
+        m_window = std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "Lumin");
+
         m_instance = this;
     }
 
     void Application::run()
     {
         sf::Clock clock;
-        while(WindowManager::window->isOpen())
+        while(m_window->isOpen())
         {
-            while (WindowManager::window->pollEvent(m_event))
+            while (m_window->pollEvent(m_event))
             {
                 // manage window close event (temp decision)
                 if (m_event.type == sf::Event::Closed)
-                    WindowManager::window->close();
+                    m_window->close();
                 // -----------------------------------------
 
                 SceneManager::active->processEvent(m_event);
@@ -34,15 +35,15 @@ namespace Lumin
             sf::Time deltaTime = clock.restart();
             SceneManager::active->update(deltaTime.asSeconds());
 
-            WindowManager::window->clear();
-            SceneManager::active->render(*WindowManager::window);
-            WindowManager::window->display();
+            m_window->clear();
+            SceneManager::active->render(*m_window);
+            m_window->display();
         }
     }
 
     void Application::close()
     {
-        WindowManager::shutdown();
+        m_window->close();
     }
     
     Application::~Application()
