@@ -9,7 +9,7 @@ namespace Lumin
     { 
     public:
         Application();
-        virtual ~Application();
+        ~Application();
     private:
         void run();
         
