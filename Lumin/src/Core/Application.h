@@ -7,9 +7,15 @@ namespace Lumin
 {
     class Application
     { 
+    private: 
+        static Application* m_instance; 
     public:
         Application();
         ~Application();
+
+        void close();
+
+        static Application& getInstance() { return *m_instance; }
     private:
         void run();
         

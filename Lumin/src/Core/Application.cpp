@@ -4,12 +4,17 @@
 #include <Graphics/WindowManager.h>
 #include <Utility/EventManager.h>
 #include <Scene/SceneManager.h>
+#include <Core/Assert.h>
 
 namespace Lumin
-{
+{   
+    Application* Application::m_instance = nullptr;
+
     Application::Application()
     {
         Lumin::Initializer::init();
+
+        m_instance = this;
     }
 
     void Application::run()
@@ -34,6 +39,11 @@ namespace Lumin
             SceneManager::active->render(*WindowManager::window);
             WindowManager::window->display();
         }
+    }
+
+    void Application::close()
+    {
+        WindowManager::shutdown();
     }
     
     Application::~Application()
