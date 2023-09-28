@@ -9,6 +9,8 @@ class Game : public Lumin::Application
 public:
     Game()
     {
+        Lumin::ResourceHolders::getTextureHolder().load("textureID", "assets/textures/Mausoleum.png");
+
         Lumin::SceneManager::scenes->add("main", std::make_shared<MainScene>());
         Lumin::SceneManager::scenes->add("secondary", std::make_shared<SecondaryScene>());
         Lumin::SceneManager::setActive("main");

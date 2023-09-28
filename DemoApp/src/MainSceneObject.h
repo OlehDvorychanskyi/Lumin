@@ -5,6 +5,7 @@ class MainSceneObject : public Lumin::SceneObject
 {
 private:
     sf::RectangleShape rectangle;
+    sf::Sprite sprite;
 public:
     MainSceneObject();
     virtual void processEvent(const sf::Event &event) override;
