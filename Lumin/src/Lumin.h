@@ -8,3 +8,5 @@
 #include "Scene/SceneManager.h"
 
 #include "Logging/Logger.h"
+
+#include "Graphics/ResourceHolders.h"
