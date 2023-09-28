@@ -1,6 +1,5 @@
 #include "Application.h"
 
-#include <Core/Initializer.h>
 #include <Scene/SceneManager.h>
 #include <Core/Assert.h>
 
