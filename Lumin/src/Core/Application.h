@@ -16,7 +16,7 @@ namespace Lumin
         std::unique_ptr<sf::RenderWindow> m_window;
     public:
         Application();
-        ~Application();
+        ~Application() = default;
 
         void close();
 

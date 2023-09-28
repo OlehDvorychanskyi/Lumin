@@ -10,8 +10,6 @@ namespace Lumin
 
     Application::Application()
     {
-        Lumin::Initializer::init();
-
         m_window = std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "Lumin");
 
         m_instance = this;
@@ -44,10 +42,5 @@ namespace Lumin
     void Application::close()
     {
         m_window->close();
-    }
-    
-    Application::~Application()
-    {
-        Lumin::Initializer::shutdown();
     }
 }

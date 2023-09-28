@@ -1,5 +1,7 @@
 #pragma once 
 
+int main();
+
 namespace Lumin
 {
     class Initializer
@@ -7,7 +9,7 @@ namespace Lumin
     private:
         static void init();
         static void shutdown();
-
-        friend class Application;
+    
+        friend int ::main();
     };
 }
