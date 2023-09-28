@@ -3,6 +3,7 @@
 #include <memory>
 
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Shader.hpp>
 
 #include <Core/Assert.h>
 #include <Logging/Logger.h>
@@ -29,12 +30,14 @@ namespace Lumin
         };
 
         static std::unique_ptr<ResourceHolder<sf::Texture, ResourceID>> m_textures;
+        static std::unique_ptr<ResourceHolder<sf::Shader, ResourceID>> m_shaders;
         
         static void init();
         static void shutdown();
 
     public:
         static ResourceHolder<sf::Texture, ResourceID>& getTextureHolder() { return *m_textures; }
+        static ResourceHolder<sf::Shader, ResourceID>& getShaderHolder() { return *m_shaders; }
     };
 
     template <typename Resource, typename Identifier>
